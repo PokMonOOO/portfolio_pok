@@ -35,21 +35,11 @@
   <a href="javascript:void(0)" class="quitter center kalam" onclick="fermerFenetre()">
     QUITTER
   </a>
-  <script>
-    function fermerFenetre() {
-      // Vérifie si la fenêtre peut être fermée
-      if (window.opener) {
-        window.close(); // Ferme la fenêtre actuelle si elle a été ouverte par JavaScript
-      } else {
-        alert("Impossible de fermer cette fenêtre. Elle n'a pas été ouverte par un script."); 
-      }
-    }
-  </script>
 
   <a class="kalam retour center" onclick="revenirOuFermer()">
     Retour
   </a>
-  <audio id="click" src="../src/menuclick.wav" volume="0.7"></audio>
-  <audio id="mouseover" src="../src/menuclick.wav" volume="0.7"></audio>
+  <audio id="click" src="../src/quit.mp3" volume="0.6"></audio>
+  <audio id="mouseover" src="../src/menuclick.wav" volume="0.8"></audio>
   <script src="../script.js"></script>
 </body>

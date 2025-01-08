@@ -68,10 +68,13 @@ header{
     position: fixed;
     top: 80%; 
     left: 70%;
-    width: 16%;
+    width: 13%;
     height: 10%;
-    background-color: #FF6D6D;
+    background-color: #ff6d6dd7;
     cursor: pointer;
+}
+.retour:hover{
+    background-color: #FF6D6D;
 }
 .kalam{
     font-family: kalam;

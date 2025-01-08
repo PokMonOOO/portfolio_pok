@@ -13,6 +13,9 @@ function GettextIntervale() {
     }, 500); // 500 millisecondes = 0.5 seconde
 }
 
+// Permet de préparer le son après une interaction utilisateur
+let isInteractionAllowed = false;
+
 GettextIntervale()
 
 function ouvrirNouvelleFenetre() {
@@ -29,11 +32,32 @@ function ouvrirNouvelleFenetre() {
 
   function revenirOuFermer() {
     if (document.referrer) {
-      window.history.back();
+        window.history.back(); // Retourne en arrière sans jouer de son
     } else {
-      window.close();
+        const sound = document.getElementById('click');
+        sound.currentTime = 0;  // Réinitialise la position de lecture au début
+        sound.play();           // Joue le son
+
+        setTimeout(() => {
+            window.close();     // Ferme la fenêtre après avoir joué le son
+        }, sound.duration * 180);
     }
-  }
+}
+
+function fermerFenetre() {
+    const sound = document.getElementById('click');
+    sound.currentTime = 0;  // Réinitialise la position de lecture au début
+    sound.play();           // Joue le son
+
+    setTimeout(() => {
+        if (window.opener) {
+            window.close(); // Ferme la fenêtre actuelle si elle a été ouverte par JavaScript
+        } else {
+            alert("Impossible de fermer cette fenêtre. Elle n'a pas été ouverte par un script.");
+        }
+    }, sound.duration * 180); // Attend la durée du son en millisecondes
+}
+
 
 // Sélectionne tous les éléments avec la classe 'kalam'
 const kalamElements = document.querySelectorAll('.kalam');
