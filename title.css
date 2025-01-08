@@ -1,0 +1,41 @@
+* {
+    overflow: hidden;
+}
+body{
+    background-color: #212121;
+    background-image: url(./src/title-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.cts {
+    position: fixed; /* Fixe l'élément par rapport à la fenêtre */
+    top: 0; /* Place en haut de l'écran */
+    left: 0; /* Place à gauche de l'écran */
+    width: 100vw; /* Largeur totale de l'écran */
+    height: 100vh; /* Hauteur totale de l'écran */
+    background: transparent; /* Complètement transparent */
+    cursor: pointer; /* Affiche un pointeur pour indiquer qu'il est cliquable */
+  }
+  
+  .logo {
+    position: fixed; /* Position par rapport à la fenêtre */
+    top: -10%; /* Centre verticalement */
+    left: 38%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste pour être exactement au centre */
+    width: 140vh; /* Taille du logo (ajuste selon tes besoins) */
+    height: 140vh; /* Taille du logo */
+    background-image: url('./src/LZ.svg'); /* Chemin vers l'image du logo */
+    background-size: contain; /* Ajuste la taille pour s'adapter au conteneur */
+    background-repeat: no-repeat; /* Évite la répétition */
+    background-position: center; /* Centre l'image à l'intérieur */ 
+  }
+  .text-center {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: 400;
+    position: fixed;
+    top: calc(50% + 150px); /* Décale le texte juste en dessous du logo */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 54px;
+    color: #fff; /* Couleur du texte */
+  }
